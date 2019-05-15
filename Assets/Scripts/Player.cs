@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
     public float groundRayDistance = 1.1f;
 
+ 
+
     private CharacterController controller;
     private Vector3 motion;
     private bool isJumping = false;
@@ -51,9 +53,6 @@ public class Player : MonoBehaviour
             isJumping = false;
         }
         motion.y += gravity * Time.deltaTime;
-
-
-
 
         // Applies motion to CharaterController
         controller.Move(motion * Time.deltaTime);
