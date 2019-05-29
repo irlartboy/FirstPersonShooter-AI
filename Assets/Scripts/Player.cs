@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     private CharacterController controller;
     private Vector3 motion;
     private bool isJumping = false;
-    private bool isSprinting = false;
     void Start()
     {
         controller = GetComponent<CharacterController>();
