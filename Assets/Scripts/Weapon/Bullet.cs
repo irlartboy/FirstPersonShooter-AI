@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int damage = 10;
     public float speed = 10f;
     public GameObject effectsPrefab;
     public Transform line;
@@ -31,6 +32,11 @@ public class Bullet : MonoBehaviour
         ContactPoint contact = col.contacts[0];
         // Spawn the effect eg. bullet hole, sparks
         //Instantiate(effectsPrefab, contact.point, Quaternion.LookRotation(contact.normal));
+        Enemy enemy = col.collider.GetComponent<Enemy>();
+        if (enemy)
+        {
+            enemy.TakeDamage(damage);
+        }
         // Destry bullet
         Destroy(gameObject);
     }

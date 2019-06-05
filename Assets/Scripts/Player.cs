@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
              direction.y = jumpHeight;
          } */
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (IsGrounded() && Input.GetKey(KeyCode.LeftShift))
         {
             motion.x = direction.x * runSpeed;
             motion.z = direction.z * runSpeed;
